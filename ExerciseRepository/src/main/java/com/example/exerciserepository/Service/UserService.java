@@ -72,13 +72,13 @@ public class UserService {
 
     }
 
-    public Boolean findUserByUsernameAndPassword(String username, String password){
+    public User findUserByUsernameAndPassword(String username, String password){
 
         User up = userRepository.findUserByUsernameAndPassword(username, password);
         if(up != null){
-            return true;
+            return up;
         }
-        return false;
+        return null;
     }
 
 }
