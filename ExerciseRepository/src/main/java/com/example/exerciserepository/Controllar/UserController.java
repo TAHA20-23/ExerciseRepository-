@@ -81,8 +81,8 @@ public class UserController {
 
     @GetMapping("get-username-password/{username}/{password}")
     public ResponseEntity findUserNameAndPassword(@PathVariable String username, @PathVariable String password){
-        Boolean isFind = userService.findUserByUsernameAndPassword(username, password);
-        if (isFind){
+        User isFind = userService.findUserByUsernameAndPassword(username, password);
+        if (isFind != null){
 //            return ResponseEntity.status(200).body(findUserNameAndPassword(username,password));
             return ResponseEntity.status(200).body(new ApiResponse("User name and user are found"));
 
